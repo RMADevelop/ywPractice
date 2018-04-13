@@ -6,7 +6,6 @@ import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.arellomobile.mvp.MvpAppCompatActivity;
-import com.example.admin.owtest.App;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -23,6 +22,7 @@ public abstract class BaseActivity extends MvpAppCompatActivity {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
         super.onCreate(savedInstanceState, persistentState);
+
     }
 
     protected abstract Navigator getNavigator();
@@ -30,25 +30,23 @@ public abstract class BaseActivity extends MvpAppCompatActivity {
     @Override
     public void setContentView(View view) {
         super.setContentView(view);
-        unbinder = ButterKnife.bind(this, view);
+    }
+
+    @Override
+    public void setContentView(int layoutResID) {
+        super.setContentView(layoutResID);
+        ButterKnife.bind(this);
+
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        App.getInstance()
-                .getCicerone()
-                .getNavigatorHolder()
-                .setNavigator(getNavigator());
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        App.getInstance()
-                .getCicerone()
-                .getNavigatorHolder()
-                .removeNavigator();
     }
 
     @Override

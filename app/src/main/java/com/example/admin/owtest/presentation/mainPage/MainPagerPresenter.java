@@ -1,4 +1,4 @@
-package com.example.admin.owtest.presentation.weatherDetail;
+package com.example.admin.owtest.presentation.mainPage;
 
 import com.arellomobile.mvp.InjectViewState;
 import com.example.admin.owtest.presentation.core.BasePresenter;
@@ -6,9 +6,9 @@ import com.example.admin.owtest.presentation.core.BasePresenter;
 import javax.inject.Inject;
 
 @InjectViewState
-public class WeatherDetailPresenter extends BasePresenter<WeatherDetailView> {
+public class MainPagerPresenter extends BasePresenter<MainPagerView> {
 
     @Inject
-    public WeatherDetailPresenter() {
+    public MainPagerPresenter() {
     }
 }

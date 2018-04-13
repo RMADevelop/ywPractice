@@ -28,12 +28,6 @@ public class AppModule {
 
     @Provides
     @Singleton
-    public Router provideRouter() {
-        return application.getRouter();
-    }
-
-    @Provides
-    @Singleton
     public SharedPreferences provideSharedPreferences() {
         return application.getSharedPreferences();
     }
